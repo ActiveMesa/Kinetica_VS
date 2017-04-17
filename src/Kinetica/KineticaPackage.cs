@@ -109,17 +109,12 @@ namespace ActiveMesa.Kinetica
 					textManager.GetActiveView(1, null, out view);
 					var wpfView = eafs.GetWpfTextView(view);
 
-
-
 					var doc = (TextDocument)app.ActiveDocument.Object();
 					var ep = doc.CreateEditPoint(doc.StartPoint);
 				  string txt = ep.GetText(doc.EndPoint);
 					
           // fixme: hashcode collisions WILL happen here
-					snapshots.Add(txt.GetHashCode(), txt);
-
-					//Clipboard.Clear();
-					//Clipboard.SetDataObject(clipData);
+					snapshots.Add(st.ElapsedMilliseconds, txt);
 				}
 			};
 
