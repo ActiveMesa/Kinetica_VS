@@ -109,24 +109,15 @@ namespace ActiveMesa.Kinetica
 					textManager.GetActiveView(1, null, out view);
 					var wpfView = eafs.GetWpfTextView(view);
 
-					//var doc = (TextDocument) app.ActiveDocument.Object();
-					//var ep = doc.CreateEditPoint(doc.StartPoint);
-					//var text = ep.GetText(doc.EndPoint);
-					//snapshots.Add(elapsed,text);
+
 
 					var doc = (TextDocument)app.ActiveDocument.Object();
 					var ep = doc.CreateEditPoint(doc.StartPoint);
-					//var clipData = Clipboard.GetDataObject();
-					ep.Copy(doc.EndPoint);
-
-					var h = Clipboard.GetData(DataFormats.UnicodeText);
-					var z = Clipboard.GetData("HiddenTextBannerFormat");
-
-					var f = Clipboard.GetData(DataFormats.Html);
-					var formats = Clipboard.GetDataObject().GetFormats(true);
-					var txt = Clipboard.GetText(TextDataFormat.UnicodeText);
+				  string txt = ep.GetText(doc.EndPoint);
 					
+          // fixme: hashcode collisions WILL happen here
 					snapshots.Add(txt.GetHashCode(), txt);
+
 					//Clipboard.Clear();
 					//Clipboard.SetDataObject(clipData);
 				}
