@@ -61,11 +61,11 @@
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
 
-      <Button guid="guidKineticaCmdSet" id="cmdMyTest" priority="0x0100" type="Button">
+      <Button guid="guidKineticaCmdSet" id="cmdStartTracking" priority="0x0100" type="Button">
         <Parent guid="guidKineticaCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Start Tracking</ButtonText>
+          <ButtonText>Kinetica: Start Tracking</ButtonText>
         </Strings>
       </Button>
 
@@ -73,7 +73,7 @@
         <Parent guid="guidKineticaCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Save Snapshot</ButtonText>
+          <ButtonText>Kinetica: Save Snapshot</ButtonText>
         </Strings>
       </Button>
 
@@ -104,7 +104,7 @@
     <GuidSymbol name="guidKineticaCmdSet" value="{0642e6cb-60c5-4d57-aae3-e971fa85b6dd}">
 
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="cmdMyTest" value="0x0100" />
+      <IDSymbol name="cmdStartTracking" value="0x0100" />
       <IDSymbol name="cmdSaveSnapshot" value="0x0101" />
     </GuidSymbol>
     

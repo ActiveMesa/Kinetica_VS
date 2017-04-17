@@ -80,8 +80,8 @@ namespace ActiveMesa.Kinetica
 			{
 				// Create the command for the menu item.
 				CommandID menuCommandID = new CommandID(GuidList.guidKineticaCmdSet, 
-					(int)PkgCmdIDList.cmdMyTest);
-				MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID);
+					(int)PkgCmdIDList.cmdStartTracking);
+				MenuCommand menuItem = new MenuCommand(StartTracking, menuCommandID);
 				mcs.AddCommand(menuItem);
 
 				// command for saving the snapshot to a folder
@@ -126,6 +126,7 @@ namespace ActiveMesa.Kinetica
 
 		private void SaveSnapshots(object sender, EventArgs e)
 		{
+      
 			var dlg = new FolderBrowserDialog { ShowNewFolderButton = true };
 			if (dlg.ShowDialog() == DialogResult.OK)
 			{
@@ -143,7 +144,7 @@ namespace ActiveMesa.Kinetica
 		/// See the Initialize method to see how the menu item is associated to this function using
 		/// the OleMenuCommandService service and the MenuCommand class.
 		/// </summary>
-		private void MenuItemCallback(object sender, EventArgs e)
+		private void StartTracking(object sender, EventArgs e)
 		{
 			// Show a Message Box to prove we were here
 			//var app = (EnvDTE.DTE) GetService(typeof (SDTE));
